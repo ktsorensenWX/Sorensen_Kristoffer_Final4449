@@ -1,0 +1,149 @@
+{% extends "common.html" %}
+{% block content %}
+<script src="/static/geoui/splitter.js"></script>
+
+
+<head>
+<style>
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#setBox {
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid #4f4d4d;
+}
+
+</style>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    HTML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+
+
+<div class="center"
+    style='font-family: "Google Sans",Arial,Helvetica,sans-serif; padding: 20px; margin: 20px;'>
+
+<h1>&nbsp; Goals of this Project </h1>
+Capstone Project -- COMP 4449 -- 11/12/2022
+
+<br/>
+<br/>
+<br/>
+
+Combining both Meteorology with Data Science has been a focal point of my studies. Taking a difficult science
+full of prediction and forcasting, and applying it to a discipline that solves problems using prediction can lead to
+powerful results. The next steps involve building individual models from scratch, non-reliant on packages or extensions.
+Developing a model that produces high confidence while providing accurate results is the true goal but when dealing with extensive
+amounts of weather phenomena, overfitting becomes a serious issue.
+
+<br/>
+<br/>
+
+<table width=100% class="our_menu" style="text-align:center;" border=0><tr>
+    <td><div class="card" style="width: 40rem;margin: 0px auto;">
+        <div class="card-body">
+            <p class="card-text">
+                <img id="dragData"
+                    src="/static/imgs/Cloudy_002.jpg"
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    width="500"
+                    height="250">    
+        </div>
+    </table>
+    <hr/>
+
+Future goals aim at applying image classification into automotive, aviation and shipping industries to improve safety and reaction
+to changing weather situations. In cases of scientific research (such as Storm Chasing), having an application capable of
+assissting in interpretation can improve reaction when time is crucial.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<footer id="footer" class="our_menu1" style="background: #3c4043 !important;position: relative; bottom:0; width:100%;z-index:6; ">
+    <br/>
+    <div class="container" >
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Our Contact</h5>
+                    <a href="#"><h1><i class="fas fa-hand-holding-usd"></i>Donate For Cause</h1></a>
+                    <address>Denver Phone (303) XXX-XXXX </address>
+                        <i class="icon-phone"></i> <br>
+                        <i class="icon-envelope-alt"></i> info@GEOSPACES.ORG
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Quick Links</h5>
+                    <ul class="link-list">
+                        <li><a href="#">Latest Events</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Latest posts</h5>
+                    <ul class="link-list">
+                        <li><a href="#">AI Blogs</a></li>
+                        <li><a href="http://www.msn.com">MSN</a></li>
+                        <li><a href="#">PI</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Recent News</h5>
+                    <ul class="link-list">
+                        <li><a target="" href="#">News</a></li>
+                        <li><a target="new" href="#">Catalog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer" style="background: #5c5c5c !important">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                            <span>&copy; All right reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+{% endblock %}

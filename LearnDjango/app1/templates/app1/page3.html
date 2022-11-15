@@ -1,0 +1,99 @@
+{% extends "common.html" %}
+{% block content %}
+<script src="/static/geoui/splitter.js"></script>
+
+
+<head>
+<style>
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#setBox {
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid #4f4d4d;
+}
+
+</style>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    HTML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+
+<div class="center"
+     style='font-family: "Google Sans",Arial,Helvetica,sans-serif; padding: 20px; margin: 20px;'>
+    <h1>&nbsp; About the Models Used</h1>
+</div>
+
+<!-- ResNet50 -->
+<div class="container" >
+        <div class="row">
+            <div class="col-md-10">
+                
+     <img src="/static/imgs/Keras-ResNet50.jpg" width=340px align=right valign=top/>
+            
+<h3>&nbsp; ResNet50 (Residual Networks)</h3>
+ResNet50 is considered a Very-Deep Convolutional Neural Network, meaning it consists of several layers that allow for deeper
+processing of images. This does not always equate to more accurate detection due to the risk of overfitting increasing
+with more layers. ResNet50 employs a "skip" connect to help reduce gradient loss, upholding higher accuracies. The end result
+is a lighter model with great ability to detect detail without teh risk of extreme overfitting.
+
+</div>
+
+<!-- ResNet152 -->
+<div class="container" >
+    <div class="row">
+        <div class="col-md-10">
+            <br/>            
+            <br/>    
+ <img src="/static/imgs/ResNet152_img.png" width=280px align=left valign=top/>
+        
+<h3>&nbsp; ResNet152 (Residual Networks)</h3>
+ResNet152 is a larger version of the predecessor, ResNet50, using 152 layers for better image clarity. Using this model produced
+the highest accuracies of any of the 4 models but showed little change in prediction accuracies of images. This model does run the
+risk of overfitting more-so than ResNet50 due to the larger layer count but if tuned correctly and fed with sufficent data,
+can be nearly perfect in its output. 
+                   
+</div>
+
+<!-- 5-Layer CNN -->
+<div class="container" >
+    <div class="row">
+        <div class="col-md-10">
+            <br/>    
+            <br/>            
+ <img src="/static/imgs/CNN_Layer.jpeg" width=300px align=right valign=top/>
+        
+<h3>&nbsp; 5-Layer CNN </h3>
+The simple 5-layer CNN used is a simple Neural Network that makes use of 2 Convolutional layers, 2 MaxPooling Layers, and a
+flattening layer. The purpose behind this model is to give an idea as to what is happening underneath the Very-Deep layer CNNs
+while still producing results. Since this model lacks depth, many of the results are near 100% confident, even if the answer is
+completely wrong. This model suffers from overfitting due to the lack of data diversity and the ability for it to detect smaller
+changes in pixel colors. 
+
+</div>
+
+
+<!-- VGG16 -->
+<div class="container" >
+    <div class="row">
+        <div class="col-md-10">
+            <br/>    
+            <br/>            
+ <img src="/static/imgs/VGG_16.png" width=340px align=left valign=top/>
+        
+<h3>&nbsp; VGG16 </h3>
+VGG16 is a powerful and deep-layer Neural Network capable of pulling out the small pixel
+details in an image. Similar to ResNet152 and ResNet50, VGG16 is also a winning model, taking both
+first and second place in the ILSVRC Challange (ImageNet Large Scale Visual Recognition Challenge).
+VGG16 gradually gets more intense in each layer, eventually falling into convolutional layers with
+channel sizes of 512.
+                   
+</div>
+
+{% endblock %}

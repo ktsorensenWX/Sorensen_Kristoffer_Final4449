@@ -1,0 +1,279 @@
+{% extends "common.html" %}
+{% block content %}
+<script src="/static/geoui/splitter.js"></script>
+
+
+<head>
+<style>
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#setBox {
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid #4f4d4d;
+}
+
+</style>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    HTML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+
+
+<div class="center"
+    style='font-family: "Google Sans",Arial,Helvetica,sans-serif; padding: 20px; margin: 20px;'>
+
+<h1>&nbsp;Model Testing and Experimentation</h1>
+Try Inputting images of the following instances: Cloudy, Rain, Snow, Hail, Lightning, Clear or Sunrise
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<!-- Table set 1 -->
+BASE CONVOLUTIONAL NEURAL NETWORK WITH 5 LAYERS
+<table width=100% class="our_menu" style="text-align:center;" border=0><tr>
+    <td><div class="card" style="width: 18rem;margin: 0px auto;">
+        <div class="card-body">
+            <p class="card-text">
+                <img id="dragData"
+                    src="/static/imgs/sunrise_01.jpg"
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    width="200"
+                    height="150">    
+        </div>
+            </div></td>
+    <td><div class="card" style="width: 18rem;margin: 0px auto;">
+
+    <div class="card-body">
+    <h5 class="card-title">Selection Box</h5>
+    <p class="card-text">
+        <form  id="fileupload" method="post" enctype="multipart/form-data"  action="/app2/runexp_2/">
+            {% csrf_token %}
+            <label for="img">Select image:</label>
+            <input type="file" name="file" id=file_id /> <br/>
+            <input type=button value="Upload" onclick="runexperiment()" /> <br/>
+        </form>
+        {{ name }}
+    </div>
+
+    <td><div class="card" style="width: 18rem;margin: 0px auto;">
+        <div class="card-body">
+        <p class="card-text">
+            <img id="dragData"
+                src="/static/imgs/tornado_01.jpg"
+                draggable="true"
+                ondragstart="drag(event)"
+                width="200"
+                height="150">    
+    </div>
+        </div></td>
+    <br/>
+    <br/>
+</table>
+
+        <hr/>
+        
+        <div id=status > STATUS:  </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+<!-- Table set 2 -->
+VGG-16 VERY DEEP CONVOLUTIONAL NEURAL NETWORK
+<table width=100% class="our_menu" style="text-align:center;" border=0><tr>
+    <td><div class="card" style="width: 18rem;margin: 0px auto;">
+        <div class="card-body">
+            <p class="card-text">
+                <img id="dragData"
+                    src="/static/imgs/Clear_03.jpg"
+                    draggable="true"
+                    ondragstart="drag(event)"
+                    width="200"
+                    height="150">    
+        </div>
+            </div></td>
+    <td><div class="card" style="width: 18rem;margin: 0px auto;">
+
+    <div class="card-body">
+    <h5 class="card-title">Selection Box</h5>
+    <p class="card-text">
+        <form  id="fileupload_1" method="post" enctype="multipart/form-data"  action="/app2/runexp_3/">
+            {% csrf_token %}
+            <label for="img">Select image:</label>
+            <input type="file" name="file_1" id=file_id_1 /> <br/>
+            <input type=button value="Upload" onclick="runexperiment_1()" /> <br/>
+        </form>
+        {{ name }}
+    </div>
+
+    <td><div class="card" style="width: 18rem;margin: 0px auto;">
+        <div class="card-body">
+        <p class="card-text">
+            <img id="dragData"
+                src="/static/imgs/Cloudy_002.jpg"
+                draggable="true"
+                ondragstart="drag(event)"
+                width="200"
+                height="150">    
+    </div>
+        </div></td>
+    <br/>
+    <br/>
+</table>
+        <hr/>
+        
+        <div id=status_1 > STATUS:  </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    
+    </body>
+    <footer id="footer" class="our_menu1" style="background: #3c4043 !important;position: relative; bottom:0; width:100%;z-index:6; ">
+        <br/>
+        <div class="container" >
+            <div class="row">
+    
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h5 class="widgetheading">Our Contact</h5>
+                        <a href="#"><h1><i class="fas fa-hand-holding-usd"></i>Donate For Cause</h1></a>
+                        <address>Denver Phone (303) XXX-XXXX </address>
+                            <i class="icon-phone"></i> <br>
+                            <i class="icon-envelope-alt"></i> info@GEOSPACES.ORG
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h5 class="widgetheading">Quick Links</h5>
+                        <ul class="link-list">
+                            <li><a href="#">Latest Events</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h5 class="widgetheading">Latest posts</h5>
+                        <ul class="link-list">
+                            <li><a href="#">AI Blogs</a></li>
+                            <li><a href="http://www.msn.com">MSN</a></li>
+                            <li><a href="#">PI</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget">
+                        <h5 class="widgetheading">Recent News</h5>
+                        <ul class="link-list">
+                            <li><a target="" href="#">News</a></li>
+                            <li><a target="new" href="#">Catalog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sub-footer" style="background: #5c5c5c !important">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                                <span>&copy; All right reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+</body>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    SCRIPTS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<script>
+//-------------------------------------------------------------------------    
+function runexperiment(){
+    var file_id = document.getElementById("file_id");
+    if ( file_id.files.length <= 0) {
+        alert("No Files Selected for Standard CNN Model!!");
+        return;
+    }
+    var formData = new FormData($('form#fileupload')[0]);
+    $.ajax({
+        url: "/app2/runexp_2/",
+        type: 'POST',
+        data: formData,
+        success: function(response) {
+            alert("Uploaded!! " + response, "btn-success", 2000);
+            $('#status').html(response );
+        },
+        error: function(response) {
+            alert("Error!!!" + response.responseText, "btn-error");
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+}
+
+// For accessing the fourth model
+function runexperiment_1(){
+    var file_id = document.getElementById("file_id_1");
+    if ( file_id.files.length <= 0) {
+        alert("No Files Selected for VGG16 Model!!");
+        return;
+    }
+    var formData = new FormData($('form#fileupload_1')[0]);
+    $.ajax({
+        url: "/app2/runexp_3/",
+        type: 'POST',
+        data: formData,
+        success: function(response) {
+            alert("Uploaded!! " + response, "btn-success", 2000);
+            $('#status_1').html(response );
+        },
+        error: function(response) {
+            alert("Error!!!" + response.responseText, "btn-error");
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+}
+    
+//-------------------------------------------------------------------------    
+    
+function allowDrop(even) {
+    even.preventDefault();
+}
+
+function drag(even) {
+    even.dataTransfer.setData("text", even.target.id);
+}
+
+function drop(even) {
+    even.preventDefault();
+    var fetchData = even.dataTransfer.getData("text");
+    even.target.appendChild(document.getElementById(fetchData));
+}
+</script>
+{% endblock %}
