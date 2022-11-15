@@ -12,12 +12,12 @@ The aim for this project is to develop an image classification application capab
 
 ## Primary Libraries
 Since this is a modeling-based project, the main emphasis is on what to use to preform the modeling.
-    * Tensorflow (With GPU addition -- NVIDIA GTX 1660 SUPER)
-    * Keras (Models came from library)
-    * Pandas
-    * Pillow
-    * Numpy
-    * Matplotlib
+* Tensorflow (With GPU addition -- NVIDIA GTX 1660 SUPER)
+* Keras (Models came from library)
+* Pandas
+* Pillow
+* Numpy
+* Matplotlib
 
 ## EDA
 All of the data was clean, with the only issue being resizing the images for model usage (224x224x3). The data was displayed using visuals in order to show count of each class. Data balancing was not an issue as the data was specifically pulled to be as balanced as possible.
