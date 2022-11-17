@@ -1,6 +1,6 @@
-# How to Inastall and Run 
+# How to Install and Run 
 
-## Intallation
+## Installation
 
 pip install -r requirements.txt
 
